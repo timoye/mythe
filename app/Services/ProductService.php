@@ -17,6 +17,12 @@ class ProductService{
         }
         return $this;
     }
+    public function filterPriceLessThan(){
+        if (request()->filled('priceLessThan')){
+            $this->products=$this->products->where('price','<=',request()->priceLessThan);
+        }
+        return $this;
+    }
 
     public function getProducts(){
         $this->products=$this->products->get();
@@ -31,11 +37,6 @@ class ProductService{
                 ->getDiscount();
             return $product;
         });
-        return $this;
-    }
-
-    public function filterPriceLessThan(){
-        'priceLessThan';
         return $this;
     }
 

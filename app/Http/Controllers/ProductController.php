@@ -14,9 +14,9 @@ class ProductController extends Controller
         $products= (new ProductService())
             ->start()
             ->filterCategory()
+            ->filterPriceLessThan()
             ->getProducts()
             ->calculateDiscount()
-            ->filterPriceLessThan()
             ->getResultsJson();
 
        return $products;
