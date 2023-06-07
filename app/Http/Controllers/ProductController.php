@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function getProducts(){
 
         $products= (new ProductService())
-            ->start()
+            ->selectNeededColumns()
             ->filterCategory()
             ->filterPriceLessThan()
             ->getProducts()

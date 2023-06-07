@@ -7,7 +7,7 @@ use App\Models\Product;
 class ProductService{
     public $products;
 
-    public function start(){
+    public function selectNeededColumns(){
         $this->products=Product::select('sku','name','category','price');
         return $this;
     }
@@ -25,7 +25,7 @@ class ProductService{
     }
 
     public function getProducts(){
-        $this->products=$this->products->get();
+        $this->products=$this->products->take(5)->get();
         return $this;
     }
 
