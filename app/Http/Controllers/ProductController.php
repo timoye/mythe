@@ -15,7 +15,7 @@ class ProductController extends Controller
             ->selectNeededColumns()
             ->filterCategory()
             ->filterPriceLessThan()
-            ->getProducts()
+            ->getProducts(5)
             ->calculateDiscount()
             ->getResultsJson();
 

@@ -24,8 +24,8 @@ class ProductService{
         return $this;
     }
 
-    public function getProducts(){
-        $this->products=$this->products->take(5)->get();
+    public function getProducts($max){
+        $this->products=$this->products->take($max)->get();
         return $this;
     }
 
