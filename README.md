@@ -5,6 +5,5 @@
 - Access localhost:8080/products
 
 
-## Screenshot
 
 
